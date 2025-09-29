@@ -30,7 +30,7 @@ unsafe fn transmute_if_not_null<F>(func: *mut libc::c_void) -> Option<F> {
     Some(unsafe { mem::transmute_copy::<*mut libc::c_void, F>(&func) })
 }
 
-#[link(name = "android", kind = "dylib")]
+#[link(name = "android_trace", kind = "dylib")]
 #[cfg(target_os = "android")]
 #[cfg(feature = "api_level_23")]
 extern "C" {
@@ -57,7 +57,7 @@ pub(crate) struct ATraceAPILevel23Methods {
 // Link to Android in case the api_level_23 is disabled (i.e. we don't have the extern block above)
 // SAFETY: This is required for the calls to dlsym to be safe, ensuring that the accessed methods
 // don't get unlinked
-#[link(name = "android", kind = "dylib")]
+#[link(name = "android_trace", kind = "dylib")]
 extern "C" {}
 
 #[cfg(not(feature = "api_level_23"))]
