@@ -8,12 +8,11 @@ categories = [
 ]
 keywords = ["android", "logging", "tracing"]
 readme = true
-
-version.workspace = true
-license.workspace = true
-rust-version.workspace = true
-repository.workspace = true
-edition.workspace = true
+version = "0.1.2"
+license = "Apache-2.0 OR MIT"
+rust-version = "1.85"
+repository = "https://github.com/linebender/android_trace"
+edition = "2021"
 
 [package.metadata.docs.rs]
 all-features = true
@@ -23,8 +22,8 @@ all-features = true
 default-target = "aarch64-linux-android"
 targets = []
 
-[lints]
-workspace = true
+#[lints]
+#workspace = true
 
 [dependencies]
 tracing-subscriber = { version = "0.3.18", default-features = false, features = [

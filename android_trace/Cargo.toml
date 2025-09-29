@@ -5,11 +5,11 @@ categories = ["api-bindings", "os"]
 keywords = ["android", "logging", "atrace", "ndk"]
 readme = true
 
-version.workspace = true
-license.workspace = true
-rust-version.workspace = true
-repository.workspace = true
-edition.workspace = true
+version = "0.1.2"
+license = "Apache-2.0 OR MIT"
+rust-version = "1.85"
+repository = "https://github.com/linebender/android_trace"
+edition = "2021"
 
 [package.metadata.docs.rs]
 all-features = true
@@ -19,11 +19,12 @@ all-features = true
 default-target = "aarch64-linux-android"
 targets = []
 
-[lints]
-workspace = true
+#[lints]
+#workspace = true
 
 [dependencies]
 libc = "0.2.153"
+android_trace_sys = { path = "/ssd4/display-safety-green/crates/framework/android_trace_sys" }
 
 [features]
 default = ["api_level_23"]
